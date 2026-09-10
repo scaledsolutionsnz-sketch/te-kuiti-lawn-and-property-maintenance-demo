@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Te Kuiti Lawn and Property Maintenance | Lawn Mowing &amp; Property Care, Te Kuiti</title>
+<meta name="description" content="Family-run lawn mowing, garden maintenance, section clearing, green waste removal and property repairs across Te Kuiti, Piopio, Aria, Waitomo and Otorohanga.">
+<meta property="og:title" content="Te Kuiti Lawn and Property Maintenance">
+<meta property="og:description" content="Tidy lawns and sorted properties across Te Kuiti and the King Country. Call Robert on 021 0842 9261.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/hero-1.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e2601c'/%3E%3Ctext x='32' y='43' font-family='Arial Black,Arial' font-size='28' font-weight='900' fill='%231d1a16' text-anchor='middle'%3ETK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1d1a16;
+  --ink-2:#27221b;
+  --ink-3:#332c23;
+  --paper:#f4f2ec;
+  --bone:#eae6db;
+  --accent:#e2601c;
+  --accent-dark:#b84a10;
+  --white:#fdfcf9;
+  --line:rgba(29,26,22,.14);
+  --line-light:rgba(253,252,249,.16);
+  --radius:14px;
+  --display:'Staatliches',sans-serif;
+  --body:'Rubik',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+img{image-orientation:from-image;max-width:100%;display:block}
+body{
+  font-family:var(--body);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.7;
+  font-size:16.5px;
+  overflow-x:hidden;
+}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.05;letter-spacing:.015em}
+a{color:inherit}
+::selection{background:var(--accent);color:var(--white)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* ---------- intro overlay ---------- */
+#intro{
+  position:fixed;inset:0;z-index:200;background:var(--ink);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;
+  transition:opacity .7s ease .9s,visibility .7s ease .9s;
+}
+#intro .wordmark{color:var(--white);font-family:var(--display);font-size:clamp(1.6rem,5vw,2.6rem);letter-spacing:.06em;opacity:0;transform:translateY(14px);animation:introIn .8s cubic-bezier(.16,1,.3,1) .1s forwards}
+#intro .bar{width:64px;height:4px;background:var(--accent);opacity:0;animation:introIn .8s cubic-bezier(.16,1,.3,1) .3s forwards}
+body.loaded #intro{opacity:0;visibility:hidden}
+@keyframes introIn{to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){
+  #intro{display:none}
+}
+
+/* ---------- nav ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(29,26,22,.82);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line-light);
+}
+.nav{
+  max-width:1180px;margin:0 auto;padding:0 20px;
+  height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.logo{
+  font-family:var(--display);color:var(--white);text-decoration:none;
+  font-size:1.12rem;letter-spacing:.05em;line-height:1.1;
+}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none}
+.nav-links a{
+  color:var(--white);text-decoration:none;font-size:.95rem;font-weight:500;
+  transition:color .25s ease;
+}
+.nav-links a:hover{color:var(--accent)}
+.nav-phone{
+  display:inline-flex;align-items:center;gap:8px;
+  height:40px;padding:0 16px;border-radius:999px;
+  background:var(--accent);color:var(--ink);text-decoration:none;
+  font-weight:700;font-size:.92rem;line-height:1;white-space:nowrap;
+  transition:background .25s ease,transform .25s ease;
+}
+.nav-phone:hover{background:#f07a35}
+.nav-phone:active{transform:scale(.98)}
+.nav-phone svg{flex:none}
+#nav-toggle{
+  display:none;background:none;border:0;cursor:pointer;padding:10px;
+  width:44px;height:44px;align-items:center;justify-content:center;
+}
+#nav-toggle svg{stroke:var(--white)}
+@media (max-width:880px){
+  .nav-links{
+    position:fixed;top:68px;left:0;right:0;
+    background:rgba(29,26,22,.97);
+    flex-direction:column;align-items:flex-start;gap:0;
+    padding:10px 20px 20px;
+    display:none;border-bottom:1px solid var(--line-light);
+  }
+  .nav-links.open{display:flex}
+  .nav-links li{width:100%}
+  .nav-links a{display:block;padding:14px 4px;font-size:1.05rem;border-bottom:1px solid var(--line-light)}
+  .nav-links li:last-child a{border-bottom:0}
+  #nav-toggle{display:inline-flex}
+}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:100dvh;background:var(--ink);
+  display:flex;align-items:center;color:var(--white);overflow:hidden;
+}
+.hero-slides{position:absolute;inset:0}
+.hero-slide{
+  position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease;
+}
+.hero-slide.active{opacity:1}
+.hero-slide img{width:100%;height:100%;object-fit:cover}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(29,26,22,.62) 0%,rgba(29,26,22,.5) 45%,rgba(29,26,22,.78) 100%);
+}
+.hero-inner{
+  position:relative;z-index:2;max-width:1180px;margin:0 auto;
+  padding:120px 20px 64px;width:100%;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;font-weight:600;
+  color:var(--white);opacity:0;transform:translateY(18px);
+}
+.hero-eyebrow::before{content:"";width:34px;height:2px;background:var(--accent)}
+.hero h1{
+  font-size:clamp(2.7rem,6.4vw,4.6rem);
+  max-width:15ch;margin:18px 0 16px;color:var(--white);
+  opacity:0;transform:translateY(18px);
+}
+.hero p.lead{
+  max-width:46ch;font-size:1.08rem;color:rgba(253,252,249,.88);
+  opacity:0;transform:translateY(18px);
+}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;opacity:0;transform:translateY(18px)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding:0 26px;border-radius:999px;
+  font-weight:700;font-size:1rem;text-decoration:none;line-height:1;
+  transition:background .25s ease,color .25s ease,transform .25s ease,border-color .25s ease;
+  cursor:pointer;border:0;
+}
+.btn:active{transform:scale(.98)}
+.btn-accent{background:var(--accent);color:var(--ink)}
+.btn-accent:hover{background:#f07a35}
+.btn-ghost{background:transparent;color:var(--white);border:2px solid rgba(253,252,249,.55)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-dark{background:var(--ink);color:var(--white)}
+.btn-dark:hover{background:var(--ink-3)}
+.hero-quote{
+  margin-top:34px;max-width:430px;
+  background:rgba(29,26,22,.35);
+  border:1px solid rgba(253,252,249,.22);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-radius:var(--radius);padding:18px 22px;
+  opacity:0;transform:translateY(18px);
+}
+.hero-quote .stars{color:var(--accent);letter-spacing:3px;font-size:.95rem}
+.hero-quote blockquote{border:0;font-size:.98rem;margin:6px 0 4px;min-height:3.2em;transition:opacity .5s ease}
+.hero-quote .who{font-size:.85rem;color:rgba(253,252,249,.7)}
+body.loaded .hero-eyebrow,
+body.loaded .hero h1,
+body.loaded .hero p.lead,
+body.loaded .hero-ctas,
+body.loaded .hero-quote{
+  animation:riseIn .9s cubic-bezier(.16,1,.3,1) forwards;
+}
+body.loaded .hero-eyebrow{animation-delay:1.15s}
+body.loaded .hero h1{animation-delay:1.25s}
+body.loaded .hero p.lead{animation-delay:1.4s}
+body.loaded .hero-ctas{animation-delay:1.5s}
+body.loaded .hero-quote{animation-delay:1.65s}
+@keyframes riseIn{to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){
+  .hero-eyebrow,.hero h1,.hero p.lead,.hero-ctas,.hero-quote{opacity:1 !important;transform:none !important;animation:none !important}
+  .hero-slide{transition:none}
+}
+
+/* ---------- sections ---------- */
+section{padding:96px 0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.sec-head{max-width:640px;margin-bottom:52px}
+.sec-head h2{font-size:clamp(2.1rem,4.4vw,3.1rem);margin-bottom:14px}
+.sec-head p{color:rgba(29,26,22,.72)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* services */
+#services{background:var(--paper)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.svc-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease;
+}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px rgba(29,26,22,.35)}
+.svc-card .ph{aspect-ratio:4/3;overflow:hidden;background:var(--bone)}
+.svc-card .ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.05);transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.svc-card:hover .ph img{transform:scale(1.05)}
+.svc-card .body{padding:22px 24px 26px}
+.svc-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent-dark);margin-bottom:10px;
+}
+.svc-tag svg{flex:none}
+.svc-card h3{font-size:1.45rem;margin-bottom:8px}
+.svc-card p{font-size:.95rem;color:rgba(29,26,22,.72)}
+@media (max-width:960px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.svc-grid{grid-template-columns:1fr}}
+
+/* gallery */
+#work{background:var(--ink);color:var(--white)}
+#work .sec-head p{color:rgba(253,252,249,.7)}
+.masonry{column-count:3;column-gap:22px}
+.masonry figure{
+  break-inside:avoid;margin:0 0 22px;background:var(--ink-2);
+  border:1px solid var(--line-light);border-radius:var(--radius);overflow:hidden;
+}
+.masonry img{width:100%;height:auto;display:block;filter:saturate(.9) contrast(1.05)}
+.masonry figcaption{padding:12px 16px;font-size:.88rem;color:rgba(253,252,249,.75)}
+@media (max-width:960px){.masonry{column-count:2}}
+@media (max-width:620px){.masonry{column-count:1}}
+
+/* about */
+#about{background:var(--paper)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-photo{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3}
+.about-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.05)}
+.about-photo .tag{
+  position:absolute;left:0;bottom:0;background:var(--accent);color:var(--ink);
+  font-weight:700;font-size:.85rem;padding:10px 18px;border-radius:0 var(--radius) 0 0;
+}
+.about-copy h2{font-size:clamp(2.1rem,4.4vw,3rem);margin-bottom:16px}
+.about-copy p{color:rgba(29,26,22,.75);margin-bottom:14px}
+.checklist{list-style:none;margin-top:22px;display:grid;gap:14px}
+.checklist li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
+.checklist svg{flex:none;margin-top:3px;color:var(--accent-dark)}
+@media (max-width:880px){.about-grid{grid-template-columns:1fr;gap:34px}}
+
+/* crew */
+#crew{background:var(--bone)}
+.badge{
+  display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--ink);color:var(--white);border-radius:999px;padding:6px 14px;margin-bottom:16px;
+}
+.crew-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.crew-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 26px;text-align:center;
+  transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease;
+}
+.crew-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px rgba(29,26,22,.3)}
+.avatar{
+  width:86px;height:86px;border-radius:50%;margin:0 auto 16px;
+  background:var(--ink);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-size:1.9rem;
+  border:3px solid var(--accent);
+}
+.crew-card h3{font-size:1.4rem}
+.crew-card .role{color:var(--accent-dark);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;margin:4px 0 10px}
+.crew-card p{font-size:.93rem;color:rgba(29,26,22,.72)}
+@media (max-width:880px){.crew-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
+
+/* reviews */
+#reviews{background:var(--paper)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:36px}
+.rev-card{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px 26px;display:flex;flex-direction:column;gap:12px;
+}
+.rev-card .stars{color:var(--accent);letter-spacing:3px}
+.rev-card blockquote{border:0;font-size:.97rem;color:rgba(29,26,22,.82)}
+.rev-card .who{font-weight:600;font-size:.9rem}
+.rev-card .who small{display:block;font-weight:400;color:rgba(29,26,22,.6)}
+.rev-actions{display:flex;gap:14px;flex-wrap:wrap}
+@media (max-width:880px){.rev-grid{grid-template-columns:1fr}}
+
+/* review banner */
+#leave-review{background:var(--ink-2);color:var(--white);padding:72px 0}
+.banner-inner{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.banner-inner h2{font-size:clamp(1.9rem,4vw,2.7rem);max-width:18ch}
+.banner-inner p{color:rgba(253,252,249,.72);max-width:44ch}
+
+/* contact */
+#contact{background:var(--paper)}
+.contact-card{
+  max-width:1120px;margin:0 auto;background:var(--ink);color:var(--white);
+  border-radius:calc(var(--radius) + 6px);overflow:hidden;
+  display:grid;grid-template-columns:1fr 1fr;
+}
+.contact-map{min-height:420px}
+.contact-map iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.85) contrast(1.02)}
+.contact-body{padding:44px 42px}
+.contact-body h2{font-size:clamp(2rem,4vw,2.7rem);margin-bottom:10px}
+.contact-body >p{color:rgba(253,252,249,.72);margin-bottom:24px;font-size:.98rem}
+.contact-btns{display:grid;gap:12px;margin-bottom:26px}
+.contact-btns .btn{width:100%}
+.info-rows{display:grid;gap:14px;border-top:1px solid var(--line-light);padding-top:24px}
+.info-row{display:flex;gap:14px;align-items:flex-start;font-size:.95rem}
+.info-row svg{flex:none;color:var(--accent);margin-top:2px}
+.info-row a{color:var(--white);text-decoration:none}
+.info-row a:hover{color:var(--accent)}
+.socials{display:flex;gap:12px;margin-top:22px}
+.social-btn{
+  width:44px;height:44px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid var(--line-light);color:var(--white);
+  transition:background .25s ease,color .25s ease,border-color .25s ease;
+}
+.social-btn:hover{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+@media (max-width:880px){
+  .contact-card{grid-template-columns:1fr}
+  .contact-map{order:2;min-height:320px}
+  .contact-body{order:1;padding:34px 24px}
+}
+
+/* footer */
+footer{background:var(--ink);color:rgba(253,252,249,.75);border-top:1px solid var(--line-light)}
+.foot{
+  max-width:1180px;margin:0 auto;padding:56px 20px 40px;
+  display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;
+}
+.foot .logo{font-size:1.3rem;display:inline-block;margin-bottom:12px}
+.foot p{font-size:.92rem;max-width:36ch}
+.foot h3{color:var(--white);font-size:1.05rem;letter-spacing:.08em;margin-bottom:14px}
+.foot ul{list-style:none;display:grid;gap:10px}
+.foot a{color:rgba(253,252,249,.75);text-decoration:none;font-size:.93rem;transition:color .25s ease}
+.foot a:hover{color:var(--accent)}
+.foot-bottom{
+  border-top:1px solid var(--line-light);
+  max-width:1180px;margin:0 auto;padding:20px;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+  font-size:.85rem;color:rgba(253,252,249,.55);
+}
+@media (max-width:820px){.foot{grid-template-columns:1fr;gap:32px}}
+</style>
+</head>
+<body>
+
+<div id="intro" aria-hidden="true">
+  <div class="wordmark">TE KUITI LAWN <span style="color:var(--accent)">&amp;</span> PROPERTY</div>
+  <div class="bar"></div>
+</div>
+
+<header>
+  <nav class="nav" aria-label="Main">
+    <a class="logo" href="#top">TE KUITI LAWN <span>&amp;</span> PROPERTY<br>MAINTENANCE</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Our work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:8px">
+      <a class="nav-phone" href="tel:+642108429261">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        021 0842 9261
+      </a>
+      <button id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Welcome" style="padding:0">
+    <div class="hero-slides">
+      <div class="hero-slide active"><img src="img/hero-1.jpg" alt="Lawn mower on a freshly cut green lawn" fetchpriority="high" width="1800" height="1012"></div>
+      <div class="hero-slide"><img src="img/hero-2.jpg" alt="Ride-on mower cutting a large lawn, seen from above" loading="lazy" width="1800" height="1126"></div>
+      <div class="hero-slide"><img src="img/hero-3.jpg" alt="Freshly mowed lawn with neat stripes" loading="lazy" width="1800" height="1200"></div>
+    </div>
+    <div class="hero-inner">
+      <span class="hero-eyebrow">Te Kuiti, Waitomo and the King Country</span>
+      <h1>Tidy lawns. Sorted properties. One local crew.</h1>
+      <p class="lead">Robert and the team mow, trim, clear and repair for homes, rentals and businesses around Te Kuiti.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-accent" href="tel:+642108429261">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call 021 0842 9261
+        </a>
+        <a class="btn btn-ghost" href="#contact">Get a quote</a>
+      </div>
+      <div class="hero-quote" aria-label="Customer feedback">
+        <div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote id="hero-quote-text">The lawns look sharp every single time and the gate is always shut behind them.</blockquote>
+        <div class="who" id="hero-quote-who">Maree, Piopio</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>What we do</h2>
+        <p>One call covers the lawns, the gardens and the jobs on the list you have been putting off. Regular rounds or one-off clean ups.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc-card reveal">
+          <div class="ph"><img src="img/svc-mowing.jpg" alt="Groundskeeper line-trimming lawn edges beside a clipped hedge" loading="lazy" width="1200" height="800"></div>
+          <div class="body">
+            <span class="svc-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>Lawns</span>
+            <h3>Lawn mowing</h3>
+            <p>Regular cuts or a one-off tidy up. Edges trimmed, clippings gone and the gate shut behind us.</p>
+          </div>
+        </article>
+        <article class="svc-card reveal">
+          <div class="ph"><img src="img/svc-garden.jpg" alt="Tidy garden bed and freshly mowed lawn outside a Te Kuiti home" loading="lazy" width="1280" height="960"></div>
+          <div class="body">
+            <span class="svc-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V8M12 8c0-3.5 2.5-6 6-6 0 3.5-2.5 6-6 6zM12 12c0-3-2-5-5-5 0 3 2 5 5 5z"/></svg>Gardens</span>
+            <h3>Garden maintenance</h3>
+            <p>Weeding, planting, pruning and seasonal clean ups that keep your beds looking cared for.</p>
+          </div>
+        </article>
+        <article class="svc-card reveal">
+          <div class="ph"><img src="img/svc-hedge.jpg" alt="Shrubs trimmed neatly along a fence line" loading="lazy" width="720" height="960"></div>
+          <div class="body">
+            <span class="svc-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6-6 6 6M6 15l6-6 6 6M6 21l6-6 6 6"/></svg>Hedges</span>
+            <h3>Hedge trimming</h3>
+            <p>Hedges, shrubs and small trees shaped up and kept clear of paths, windows and power lines.</p>
+          </div>
+        </article>
+        <article class="svc-card reveal">
+          <div class="ph"><img src="img/svc-clearing.jpg" alt="Digger clearing overgrown scrub along a back fence" loading="lazy" width="960" height="960"></div>
+          <div class="body">
+            <span class="svc-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="14" width="10" height="6" rx="1"/><path d="M13 17h4l4-6h-6l-2 3M7 14V9l4-3"/></svg>Clearing</span>
+            <h3>Section clearing</h3>
+            <p>Overgrown sections knocked back with the digger, from scrub and stumps to long-neglected corners.</p>
+          </div>
+        </article>
+        <article class="svc-card reveal">
+          <div class="ph"><img src="img/svc-waste.jpg" alt="Te Kuiti Lawn and Property Maintenance ute loaded with green waste" loading="lazy" width="960" height="960"></div>
+          <div class="body">
+            <span class="svc-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>Waste</span>
+            <h3>Green waste removal</h3>
+            <p>We cart away garden waste, general rubbish and everything the clean up leaves behind.</p>
+          </div>
+        </article>
+        <article class="svc-card reveal">
+          <div class="ph"><img src="img/svc-repairs.jpg" alt="New timber carport frame built against a weatherboard house" loading="lazy" width="1280" height="960"></div>
+          <div class="body">
+            <span class="svc-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0-6.4 6.4l-5 5a1.5 1.5 0 0 0 2 2l5-5a4.5 4.5 0 0 0 6.4-6.4l-2.3 2.3-2-2z"/></svg>Repairs</span>
+            <h3>Fences, gutters and repairs</h3>
+            <p>Fence fixes, gutter cleaning and small carpentry jobs sorted while we are on site.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Recent work around town</h2>
+        <p>Real jobs from around Te Kuiti, straight off the ute. Befores, afters and the machinery in between.</p>
+      </div>
+      <div class="masonry reveal">
+        <figure>
+          <img src="img/gal-before-hedge.jpg" alt="Overgrown hedge crowding a driveway before trimming" loading="lazy" width="720" height="960">
+          <figcaption>Driveway hedge, before we started</figcaption>
+        </figure>
+        <figure>
+          <img src="img/gal-after-hedge.jpg" alt="The same driveway cut back and cleared" loading="lazy" width="720" height="960">
+          <figcaption>Same driveway, cut back and cleared</figcaption>
+        </figure>
+        <figure>
+          <img src="img/gal-mulch.jpg" alt="New garden bed mulched and planted with native grasses" loading="lazy" width="720" height="960">
+          <figcaption>New beds mulched and planted, town centre</figcaption>
+        </figure>
+        <figure>
+          <img src="img/gal-before-fence.jpg" alt="Fence line with long overgrown grass before clearing" loading="lazy" width="720" height="960">
+          <figcaption>Fence line before its trim</figcaption>
+        </figure>
+        <figure>
+          <img src="img/svc-hedge.jpg" alt="Shrubs along the same fence line trimmed to shape" loading="lazy" width="720" height="960">
+          <figcaption>Trimmed to shape and swept up</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-photo reveal">
+          <img src="img/svc-waste.jpg" alt="The Te Kuiti Lawn and Property Maintenance ute and digger loaded for a job" loading="lazy" width="960" height="960">
+          <span class="tag">Our ute, around town most days</span>
+        </div>
+        <div class="about-copy reveal">
+          <h2>A family-run crew from Te Kuiti</h2>
+          <p>Te Kuiti is a small town and word travels fast. Our work has to hold up, because the person whose lawns we mow on Tuesday plays bowls with the person who rings us on Wednesday.</p>
+          <p>We look after homes, rentals and commercial sites across Te Kuiti, Piopio, Aria, Waitomo and Otorohanga. Before we leave any job we check it over, sweep up and cart the mess away.</p>
+          <ul class="checklist">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Family-run and based right here in Te Kuiti</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>One crew for lawns, gardens, clearing and repairs</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Every job checked and left clean before we go</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREW -->
+  <section id="crew">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="badge">Example team layout</span>
+        <h2>Who turns up</h2>
+        <p>Robert runs the show. The roles below show how your team can be presented on the finished site.</p>
+      </div>
+      <div class="crew-grid">
+        <div class="crew-card reveal">
+          <div class="avatar" aria-hidden="true">R</div>
+          <h3>Robert</h3>
+          <div class="role">Owner / Operator</div>
+          <p>Quotes, mowing runs and the bigger clearing jobs. Your first call and the one who makes sure it is done right.</p>
+        </div>
+        <div class="crew-card reveal">
+          <div class="avatar" aria-hidden="true">GL</div>
+          <h3>Gardens lead</h3>
+          <div class="role">Example role</div>
+          <p>Runs the planting, pruning and seasonal clean ups so garden beds stay tidy between visits.</p>
+        </div>
+        <div class="crew-card reveal">
+          <div class="avatar" aria-hidden="true">MH</div>
+          <h3>Maintenance hand</h3>
+          <div class="role">Example role</div>
+          <p>Fences, gutters and the odd carpentry fix. Handles the property jobs that are not about the grass.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="badge" style="background:var(--accent);color:var(--ink)">Example reviews</span>
+        <h2>What locals say</h2>
+        <p>These are example reviews written for this demo. The finished site will show Robert's real Google reviews in their place.</p>
+      </div>
+      <div class="rev-grid">
+        <div class="rev-card reveal">
+          <div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>The lawns look sharp every single time and the gate is always shut behind them. Easiest decision we have made for the rental.</blockquote>
+          <div class="who">Maree<small>Piopio</small></div>
+        </div>
+        <div class="rev-card reveal">
+          <div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>Cleared our back section, hauled everything away and you would never know the gorse had been there. Fair price too.</blockquote>
+          <div class="who">Graham<small>Te Kuiti</small></div>
+        </div>
+        <div class="rev-card reveal">
+          <div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>Rang about the hedges, they came the same week and fixed a sagging fence rail while they were at it. Great to deal with.</blockquote>
+          <div class="who">Aroha<small>Otorohanga</small></div>
+        </div>
+      </div>
+      <div class="rev-actions reveal">
+        <a class="btn btn-dark" href="https://www.google.com/search?q=Te+Kuiti+Lawn+and+Property+Maintenance+Te+Kuiti+reviews" target="_blank" rel="noopener">See all our Google reviews</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEW BANNER -->
+  <section id="leave-review">
+    <div class="wrap banner-inner reveal">
+      <div>
+        <h2>Happy with our work?</h2>
+        <p>A quick Google review helps other locals find us. It takes about a minute and it means a lot to a small crew.</p>
+      </div>
+      <a class="btn btn-accent" href="https://www.google.com/search?q=Te+Kuiti+Lawn+and+Property+Maintenance+Te+Kuiti+reviews" target="_blank" rel="noopener">Leave us a review</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Get in touch</h2>
+        <p>Ring for a quick chat or flick us an email with your address and what needs doing. We will come past and give you a straight quote.</p>
+      </div>
+      <div class="contact-card reveal">
+        <div class="contact-map">
+          <iframe title="Map showing Te Kuiti Lawn and Property Maintenance, Te Kuiti" src="https://www.google.com/maps?q=Te%20Kuiti%20Lawn%20and%20Property%20Maintenance%20Te%20Kuiti%20New%20Zealand&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <div class="contact-body">
+          <h2>Talk to Robert</h2>
+          <p>Serving Te Kuiti, Piopio, Aria, Waitomo and Otorohanga.</p>
+          <div class="contact-btns">
+            <a class="btn btn-accent" href="tel:+642108429261">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Call Te Kuiti Lawn &amp; Property
+            </a>
+            <a class="btn btn-ghost" data-gmail data-user="Wowlawnservices" data-domain="gmail.com" data-su="Quote%20request%20from%20the%20website" href="#contact">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              Email us about a job
+            </a>
+          </div>
+          <div class="info-rows">
+            <div class="info-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+642108429261">021 0842 9261</a>
+            </div>
+            <div class="info-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              <a data-gmail data-user="Wowlawnservices" data-domain="gmail.com" href="#contact"><span data-email-text data-user="Wowlawnservices" data-domain="gmail.com"></span></a>
+            </div>
+            <div class="info-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Based in Te Kuiti, Waikato</span>
+            </div>
+            <div class="info-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20z"/></svg>
+              <span>Servicing Piopio, Aria, Waitomo and Otorohanga</span>
+            </div>
+          </div>
+          <div class="socials">
+            <a class="social-btn" href="https://www.facebook.com/tekuiti.mow.garden.maintenance" target="_blank" rel="noopener" aria-label="Te Kuiti Lawn and Property Maintenance on Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot">
+    <div>
+      <a class="logo" href="#top">TE KUITI LAWN <span>&amp;</span> PROPERTY MAINTENANCE</a>
+      <p>Family-run lawn and property care across Te Kuiti and the King Country. Mowing, gardens, clearing, waste and repairs.</p>
+    </div>
+    <div>
+      <h3>Pages</h3>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Our work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+      <div class="socials" style="margin-top:18px">
+        <a class="social-btn" href="https://www.facebook.com/tekuiti.mow.garden.maintenance" target="_blank" rel="noopener" aria-label="Te Kuiti Lawn and Property Maintenance on Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; <span id="year"></span> Te Kuiti Lawn and Property Maintenance. All rights reserved.</span>
+    <span>Demo website by Scaled Solutions</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // intro overlay + load state
+  window.addEventListener('load',function(){document.body.classList.add('loaded');});
+  setTimeout(function(){document.body.classList.add('loaded');},2200);
+
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // hero slide rotation
+  var slides=document.querySelectorAll('.hero-slide');
+  if(!reduced&&slides.length>1){
+    var s=0;
+    setInterval(function(){
+      slides[s].classList.remove('active');
+      s=(s+1)%slides.length;
+      slides[s].classList.add('active');
+    },6000);
+  }
+
+  // hero review quote rotation
+  var quotes=[
+    {t:'The lawns look sharp every single time and the gate is always shut behind them.',w:'Maree, Piopio'},
+    {t:'Cleared our back section and hauled everything away. You would never know the gorse had been there.',w:'Graham, Te Kuiti'},
+    {t:'Came the same week for the hedges and fixed a sagging fence rail while they were at it.',w:'Aroha, Otorohanga'}
+  ];
+  var qt=document.getElementById('hero-quote-text'),qw=document.getElementById('hero-quote-who');
+  if(!reduced&&qt&&qw){
+    var qi=0;
+    setInterval(function(){
+      qt.style.opacity='0';qw.style.opacity='0';
+      setTimeout(function(){
+        qi=(qi+1)%quotes.length;
+        qt.textContent=quotes[qi].t;qw.textContent=quotes[qi].w;
+        qt.style.opacity='1';qw.style.opacity='1';
+      },500);
+    },6500);
+  }
+
+  // scroll reveals
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+
+  // mobile nav
+  var toggle=document.getElementById('nav-toggle'),links=document.getElementById('nav-links');
+  toggle.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){links.classList.remove('open');toggle.setAttribute('aria-expanded','false');});
+  });
+
+  // gmail compose links (address assembled at runtime)
+  document.querySelectorAll('a[data-gmail]').forEach(function(a){
+    var to=a.getAttribute('data-user')+'@'+a.getAttribute('data-domain');
+    a.href='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(to)+'&su='+(a.getAttribute('data-su')||'')+'&body='+(a.getAttribute('data-body')||'');
+    a.target='_blank';a.rel='noopener';
+  });
+  document.querySelectorAll('[data-email-text]').forEach(function(el){
+    el.textContent=el.getAttribute('data-user')+'@'+el.getAttribute('data-domain');
+  });
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
