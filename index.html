@@ -9,7 +9,7 @@
 <meta property="og:description" content="Tidy lawns and sorted properties across Te Kuiti and the King Country. Call Robert on 021 0842 9261.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/hero-1.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e2601c'/%3E%3Ctext x='32' y='43' font-family='Arial Black,Arial' font-size='28' font-weight='900' fill='%231d1a16' text-anchor='middle'%3ETK%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -351,6 +351,33 @@ footer{background:var(--ink);color:rgba(253,252,249,.75);border-top:1px solid va
   font-size:.85rem;color:rgba(253,252,249,.55);
 }
 @media (max-width:820px){.foot{grid-template-columns:1fr;gap:32px}}
+
+/* Cream and green match the supplied W.O.W mark. */
+:root{--logo-cream:#f8f5df;--logo-green:#17482d}
+header{background:var(--logo-cream);border-bottom-color:rgba(23,72,45,.15);backdrop-filter:none}
+.nav{height:112px}.logo{display:inline-flex;align-items:center}
+.wow-logo{display:block;width:96px;height:96px;object-fit:contain}
+.nav-links a{color:var(--logo-green)}.nav-phone{background:var(--logo-green);color:var(--logo-cream)}
+.nav-phone:hover{background:#28643f}#nav-toggle svg{stroke:var(--logo-green)}
+footer{background:var(--logo-cream);color:var(--logo-green);border-color:rgba(23,72,45,.15)}
+.foot h3,.foot a,.foot-bottom{color:var(--logo-green)}.foot-bottom{border-color:rgba(23,72,45,.15)}
+.foot .wow-logo{width:180px;height:180px}
+html{scroll-padding-top:128px}
+.work-pairs{display:grid;gap:56px}
+.work-pair{border-top:1px solid var(--line);padding-top:24px}
+.work-pair h3{font-size:1.5rem;margin-bottom:20px}
+.pair-images{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+.pair-images figure{min-width:0;background:var(--logo-cream);border-radius:10px;overflow:hidden}
+.pair-images figcaption{padding:12px 16px;background:var(--logo-green);color:var(--logo-cream);font-weight:600;font-size:.9rem}
+.pair-images a{display:block}.pair-images img{width:100%;height:auto;max-height:620px;object-fit:contain;display:block}
+.photo-dialog{position:fixed;inset:0;margin:auto;width:min(1100px,94vw);max-width:94vw;max-height:94dvh;padding:16px;background:var(--logo-cream);color:var(--logo-green);border:0;border-radius:12px}
+.photo-dialog::backdrop{background:rgba(0,0,0,.82)}
+.photo-dialog img{width:100%;height:75dvh;object-fit:contain}
+.photo-dialog button{display:block;margin:0 0 12px auto;min-height:44px;padding:8px 18px;font:inherit;background:var(--logo-green);color:var(--logo-cream);border:0;border-radius:6px;cursor:pointer}
+.photo-dialog p{text-align:center;margin-top:10px}
+@media(max-width:880px){.nav-links{top:112px;background:var(--logo-cream)}.nav-links a{border-color:rgba(23,72,45,.15)}}
+@media(max-width:540px){.pair-images{gap:10px}.pair-images figcaption{padding:9px 10px}.work-pairs{gap:36px}.nav-phone{padding:0 10px;font-size:.82rem}.nav{gap:8px}.wow-logo{width:86px;height:86px}}
+
 </style>
 </head>
 <body>
@@ -362,7 +389,7 @@ footer{background:var(--ink);color:rgba(253,252,249,.75);border-top:1px solid va
 
 <header>
   <nav class="nav" aria-label="Main">
-    <a class="logo" href="#top">TE KUITI LAWN <span>&amp;</span> PROPERTY<br>MAINTENANCE</a>
+    <a class="logo" href="#top"><img class="wow-logo" src="img/wow-logo.webp" alt="W.O.W Lawn &amp; Property Services" width="96" height="96"></a>
     <ul class="nav-links" id="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#work">Our work</a></li>
@@ -471,36 +498,7 @@ footer{background:var(--ink);color:rgba(253,252,249,.75);border-top:1px solid va
   </section>
 
   <!-- GALLERY -->
-  <section id="work">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <h2>Recent work around town</h2>
-        <p>Real jobs from around Te Kuiti, straight off the ute. Befores, afters and the machinery in between.</p>
-      </div>
-      <div class="masonry reveal">
-        <figure>
-          <img src="img/gal-before-hedge.jpg" alt="Overgrown hedge crowding a driveway before trimming" loading="lazy" width="720" height="960">
-          <figcaption>Driveway hedge, before we started</figcaption>
-        </figure>
-        <figure>
-          <img src="img/gal-after-hedge.jpg" alt="The same driveway cut back and cleared" loading="lazy" width="720" height="960">
-          <figcaption>Same driveway, cut back and cleared</figcaption>
-        </figure>
-        <figure>
-          <img src="img/gal-mulch.jpg" alt="New garden bed mulched and planted with native grasses" loading="lazy" width="720" height="960">
-          <figcaption>New beds mulched and planted, town centre</figcaption>
-        </figure>
-        <figure>
-          <img src="img/gal-before-fence.jpg" alt="Fence line with long overgrown grass before clearing" loading="lazy" width="720" height="960">
-          <figcaption>Fence line before its trim</figcaption>
-        </figure>
-        <figure>
-          <img src="img/svc-hedge.jpg" alt="Shrubs along the same fence line trimmed to shape" loading="lazy" width="720" height="960">
-          <figcaption>Trimmed to shape and swept up</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
+  <section id="work"><div class="wrap"><div class="sec-head"><h2>Before &amp; after</h2><p>Garden tidy-ups, hedge trimming and lawn care. Before on the left, after on the right. Select a photo for a closer look.</p></div><div class="work-pairs"><article class="work-pair"><h3>Roadside garden beds</h3><div class="pair-images"><figure><figcaption>Before</figcaption><a href="img/work-1-before.webp" data-work-photo aria-label="Enlarge roadside garden beds, before"><img src="img/work-1-before.webp" alt="Roadside garden beds, before" loading="lazy"></a></figure><figure><figcaption>After</figcaption><a href="img/work-1-after.webp" data-work-photo aria-label="Enlarge roadside garden beds, after"><img src="img/work-1-after.webp" alt="Roadside garden beds, after" loading="lazy"></a></figure></div></article><article class="work-pair"><h3>Front garden</h3><div class="pair-images"><figure><figcaption>Before</figcaption><a href="img/work-2-before.webp" data-work-photo aria-label="Enlarge front garden, before"><img src="img/work-2-before.webp" alt="Front garden, before" loading="lazy"></a></figure><figure><figcaption>After</figcaption><a href="img/work-2-after.webp" data-work-photo aria-label="Enlarge front garden, after"><img src="img/work-2-after.webp" alt="Front garden, after" loading="lazy"></a></figure></div></article><article class="work-pair"><h3>Commercial garden tidy-up</h3><div class="pair-images"><figure><figcaption>Before</figcaption><a href="img/work-3-before.webp" data-work-photo aria-label="Enlarge commercial garden tidy-up, before"><img src="img/work-3-before.webp" alt="Commercial garden tidy-up, before" loading="lazy"></a></figure><figure><figcaption>After</figcaption><a href="img/work-3-after.webp" data-work-photo aria-label="Enlarge commercial garden tidy-up, after"><img src="img/work-3-after.webp" alt="Commercial garden tidy-up, after" loading="lazy"></a></figure></div></article><article class="work-pair"><h3>Driveway hedge</h3><div class="pair-images"><figure><figcaption>Before</figcaption><a href="img/work-4-before.webp" data-work-photo aria-label="Enlarge driveway hedge, before"><img src="img/work-4-before.webp" alt="Driveway hedge, before" loading="lazy"></a></figure><figure><figcaption>After</figcaption><a href="img/work-4-after.webp" data-work-photo aria-label="Enlarge driveway hedge, after"><img src="img/work-4-after.webp" alt="Driveway hedge, after" loading="lazy"></a></figure></div></article><article class="work-pair"><h3>Side lawn</h3><div class="pair-images"><figure><figcaption>Before</figcaption><a href="img/work-5-before.webp" data-work-photo aria-label="Enlarge side lawn, before"><img src="img/work-5-before.webp" alt="Side lawn, before" loading="lazy"></a></figure><figure><figcaption>After</figcaption><a href="img/work-5-after.webp" data-work-photo aria-label="Enlarge side lawn, after"><img src="img/work-5-after.webp" alt="Side lawn, after" loading="lazy"></a></figure></div></article><article class="work-pair"><h3>Back garden</h3><div class="pair-images"><figure><figcaption>Before</figcaption><a href="img/work-6-before.webp" data-work-photo aria-label="Enlarge back garden, before"><img src="img/work-6-before.webp" alt="Back garden, before" loading="lazy"></a></figure><figure><figcaption>After</figcaption><a href="img/work-6-after.webp" data-work-photo aria-label="Enlarge back garden, after"><img src="img/work-6-after.webp" alt="Back garden, after" loading="lazy"></a></figure></div></article></div></div></section>
 
   <!-- ABOUT -->
   <section id="about">
@@ -648,12 +646,12 @@ footer{background:var(--ink);color:rgba(253,252,249,.75);border-top:1px solid va
       </div>
     </div>
   </section>
-</main>
+</main><dialog class="photo-dialog" id="work-photo" aria-label="Project photo"><button type="button" id="close-photo">Close ×</button><img id="large-photo" alt=""><p id="photo-caption"></p></dialog>
 
 <footer>
   <div class="foot">
     <div>
-      <a class="logo" href="#top">TE KUITI LAWN <span>&amp;</span> PROPERTY MAINTENANCE</a>
+      <a class="logo" href="#top"><img class="wow-logo" src="img/wow-logo.webp" alt="W.O.W Lawn &amp; Property Services" width="96" height="96"></a>
       <p>Family-run lawn and property care across Te Kuiti and the King Country. Mowing, gardens, clearing, waste and repairs.</p>
     </div>
     <div>
@@ -753,5 +751,7 @@ footer{background:var(--ink);color:rgba(253,252,249,.75);border-top:1px solid va
   document.getElementById('year').textContent=new Date().getFullYear();
 })();
 </script>
-</body>
+<script>
+(function(){const dialog=document.getElementById('work-photo');document.querySelectorAll('[data-work-photo]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const image=document.getElementById('large-photo');image.src=a.href;image.alt=a.querySelector('img').alt;document.getElementById('photo-caption').textContent=image.alt;dialog.showModal();}));document.getElementById('close-photo').onclick=()=>dialog.close();})();
+</script></body>
 </html>
